@@ -19,17 +19,17 @@ class Projects extends DataModel {
 
     let valid = true;
 
-    for (const key in obj) {
-      if (!obj[key] || obj[key] === null) {
+    for (const item in obj) {
+      if (!obj[item] || obj[item] === null) {
         valid = false;
       }
     }
 
-    let arrAuthor = Array.isArray(obj.authors);
+    let arrAuthors = Array.isArray(obj.authors);
 
     let arrTag = Array.isArray(obj.tags);
 
-    if (arrAuthor && arrTag && valid) {
+    if (arrAuthors && arrTag && valid) {
       return true;
     }
     return false;

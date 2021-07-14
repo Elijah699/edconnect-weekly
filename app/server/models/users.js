@@ -53,24 +53,24 @@ class Users extends DataModel {
 
         let value = true;
 
-        for (let key in obj) {
-            if (obj[key] === undefined || obj[key] === null) {
+        for (let prop in obj) {
+            if (obj[prop] === undefined || obj[prop] === null) {
                 value = false;
             }
         }
 
         // Validate that no user in the data array already has the specified email address
-        let validEmail = this.data.find(element => element.email === obj.email);
+        let validEmail = this.data.find(item => item.email === obj.email);
 
         // Validate that no user in the data array already has the specified matric number
-        let validMatric = this.data.find(element => element.matricNumber === obj.matricNumber);
+        let validMatric = this.data.find(item => item.matricNumber === obj.matricNumber);
 
         // Validate that the password is at least 7 characters in length
         let validPsw = obj.password.length >= 7 ? true : false;
 
         if (validPsw === true && value === true) {
             if (validEmail === false || validEmail === undefined) {
-                if (validMatric === false || validEmail === undefined) {
+                if (validMatric === false || validMatric === undefined) {
                     return true;
                 }
             }

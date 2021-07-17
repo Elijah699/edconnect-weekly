@@ -1,7 +1,7 @@
 class DataModel {
     constructor() {
         this.data = [];
-        this.errors = [];
+        // this.errors = [];
     }
 
     getAll() {

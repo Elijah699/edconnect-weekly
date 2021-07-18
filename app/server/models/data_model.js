@@ -52,12 +52,12 @@ class DataModel {
        // This should return true if an object with the specified id was found in the array and deleted
       // This should return false if no object with the specified id was found
 
-      let user = this.data.find(element => element.id === id);
+      let user = this.data.find(item => item.id === id);
 
-      let userIndex = this.data.indexOf(user);
+      let index = this.data.indexOf(user);
 
       if (user) {
-          this.data.splice(userIndex, 1);
+          this.data.splice(index, 1);
           return true;
       }
         return false;
